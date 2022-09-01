@@ -1,5 +1,5 @@
 
-EN: This utility is designed to disable the Internet for all users of the Wi-Fi network, except for you, using the ARP protocol vulnerability.
+This utility is designed to disable the Internet for all users of the Wi-Fi network, except for you, using the ARP protocol vulnerability.
 
 Tested on Kali Linux.
 
