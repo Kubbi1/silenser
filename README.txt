@@ -5,10 +5,10 @@ Tested on Kali Linux.
 
 Feedback - srf0378@gmail.com
 -----------------------------
-INSTALLATION (just copy and paste into terminal):
+INSTALLATION:
 
 └─$ git clone https:
-└─$ sudo apt install python3
+└─$ apt install python3
 └─$ pip install colorama scapy netifaces
 
 -----------------------------
