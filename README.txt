@@ -7,7 +7,7 @@ Feedback - srf0378@gmail.com
 -----------------------------
 INSTALLATION:
 
-└─$ git clone https:
+└─$ git clone https://github.com/Kubbi1/silenser
 └─$ apt install python3
 └─$ pip install colorama scapy netifaces
 
