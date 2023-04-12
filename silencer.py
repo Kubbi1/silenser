@@ -62,7 +62,7 @@ def interface():
     if interface is not None:
         return interface
     else:
-        print(Fore.Red + "[!]Unable to determine connected interface.")
+        print(Fore.RED + "[!]Unable to determine connected interface.")
         exit()
 def scanning(network_ip):
     #looks stupid, right? I'll change it someday
